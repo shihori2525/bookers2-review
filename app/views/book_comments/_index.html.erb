@@ -1,9 +1,5 @@
 <% book.book_comments.each do |book_comment|%>
   <%= book_comment.user.attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
   <%= book_comment.user.name %>
-<% end %>
-
-<%= form_with(model:[book,book_comment],local:true) do |f|%>
-<%= f.text_area :comment %>
-<%= f.submit "送信" %>
+  <%= book_comment.comment %>
 <% end %>
